@@ -30,6 +30,9 @@ void push_front(list* l, node* p)
 	{
 		l->header->pPrev = p;
 	}
+	else {
+		l->footer = p;
+	}
 
 	l->header = p;
 	
@@ -44,6 +47,9 @@ void push_back(list* l, node* p)
 	if (l->footer != NULL)//もし元のノードが最後にあったら
 	{
 		l->footer->pNext = p;
+	}
+	else {
+		l->header = p;
 	}
 
 	l->footer = p;
